@@ -65,7 +65,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.analyzeButton.setOnClickListener {
-
+            currentImageUri?.let {
+                analyzeImage(it)
+            } ?: run {
+                showToast("No image picked")
+            }
         }
 
     }
@@ -78,12 +82,14 @@ class MainActivity : AppCompatActivity() {
         binding.previewImageView.setImageURI(currentImageUri)
     }
 
-    private fun analyzeImage() {
+    private fun analyzeImage(uri: Uri) {
         // TODO: Menganalisa gambar yang berhasil ditampilkan.
+        moveToResult(uri)
     }
 
-    private fun moveToResult() {
+    private fun moveToResult(uri:Uri) {
         val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra(ResultActivity.EXTRA_IMAGE_URI, uri.toString())
         startActivity(intent)
     }
 
