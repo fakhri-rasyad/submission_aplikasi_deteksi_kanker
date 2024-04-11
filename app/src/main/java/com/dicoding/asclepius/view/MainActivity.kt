@@ -64,6 +64,10 @@ class MainActivity : AppCompatActivity() {
             startGallery()
         }
 
+        binding.analyzeButton.setOnClickListener {
+
+        }
+
     }
 
     private fun startGallery() {
