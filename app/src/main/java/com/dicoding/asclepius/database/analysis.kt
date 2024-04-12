@@ -9,12 +9,9 @@ import kotlinx.parcelize.Parcelize
 @Entity
 @Parcelize
 data class Analysis(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    var id: Int = 0,
-
+    @PrimaryKey
     @ColumnInfo(name = "imageUri")
-    var uri: String? = null,
+    var uri: String,
 
     @ColumnInfo(name  = "type")
     var type: String? = null,

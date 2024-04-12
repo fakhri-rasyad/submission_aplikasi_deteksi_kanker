@@ -72,6 +72,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        binding.historyButton.setOnClickListener {
+            moveToHistory()
+        }
+
     }
 
     private fun startGallery() {
@@ -97,7 +101,10 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-
+    private fun moveToHistory(){
+        val intent = Intent(this, HistoryActivity::class.java)
+        startActivity(intent)
+    }
 
     private val launcherGallery = registerForActivityResult(
         ActivityResultContracts.PickVisualMedia()

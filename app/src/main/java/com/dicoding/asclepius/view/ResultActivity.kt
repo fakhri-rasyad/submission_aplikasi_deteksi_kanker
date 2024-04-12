@@ -51,15 +51,11 @@ class ResultActivity : AppCompatActivity() {
                 showToast("Analysis data inserted")
             }
         }
-
-
     }
-
     private fun obtainViewModel(activity: AppCompatActivity): AnalysisViewModel {
         val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProvider(activity, factory).get(AnalysisViewModel::class.java)
     }
-
     private fun analyzeImage(uri : Uri){
         binding.progressBar.visibility = View.GONE
         imageClassifierHelper = ImageClassifierHelper(
@@ -79,7 +75,10 @@ class ResultActivity : AppCompatActivity() {
                                 val processResult = it[0].categories[0]
                                 val resultLabel = processResult.label
                                 val resultScore = processResult.score
-                                binding.resultText.text = "Hasil analisis:\n Score: " + NumberFormat.getPercentInstance().format(resultScore).toString() + "\n Tipe : ${resultLabel} \n InferenceTime : $inferenceTime ms"
+                                binding.resultText.text = getString(R.string.hasil_analisis)
+                                binding.resultType.text = getString(R.string.analysis_type, resultLabel)
+                                binding.resultScore.text = getString(R.string.analysis_score, NumberFormat.getPercentInstance().format(resultScore).toString())
+                                binding.resultInferenceTime.text = getString(R.string.analysis_time, inferenceTime.toString())
 
                                 analysisResult = Analysis(
                                     uri = uri.toString(),

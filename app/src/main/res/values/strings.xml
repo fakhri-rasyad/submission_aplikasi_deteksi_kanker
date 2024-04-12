@@ -9,4 +9,9 @@
     <string name="analysis_error">Oops, there seems to be trouble in analyzing the image, \n Please try again later</string>
     <string name="save_button">Save Analysis</string>
     <string name="history">History</string>
+    <string name="analysis_image">analysis image</string>
+    <string name="analysis_type">Type: %s</string>
+    <string name="analysis_score">Score: %s</string>
+    <string name="analysis_time">%s ms</string>
+    <string name="hasil_analisis">Hasil analisis:</string>
 </resources>
