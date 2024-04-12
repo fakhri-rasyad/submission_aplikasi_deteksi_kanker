@@ -8,4 +8,5 @@
     <string name="classfier_setup_error">"Image Classifier Initialization Error, check error log for details"</string>
     <string name="analysis_error">Oops, there seems to be trouble in analyzing the image, \n Please try again later</string>
     <string name="save_button">Save Analysis</string>
+    <string name="history">History</string>
 </resources>
